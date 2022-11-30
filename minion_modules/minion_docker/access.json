@@ -1,0 +1,14 @@
+{
+  "methods": {
+    "GET": "user:user",
+    "POST": "user:moderator"
+  },
+  "html_meta": {
+    "title": "Docker Tools",
+    "image": "\/resource\/plugins\/salt-docker\/assets\/docker.png",
+    "description": "SaltStack Infrastructure Console - Docker Tools",
+    "url": "%APP_URL%"
+  },
+  "page_title": "Docker %API_PATH%",
+  "skip_template": false
+}

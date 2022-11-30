@@ -1,0 +1,56 @@
+{
+    "name": "salt-docker",
+    "description": "SaltStack Docker Control",
+    "maintainer": "nobody, tbh",
+    "version": "0.01",
+    "depends": {
+        "core": "4.99.0",
+        "salt": "0.10"
+    },
+    "logo_image": "\/resource\/plugins\/salt-docker\/assets\/docker.png",
+    "enabled": true,
+    "scripts": [
+        {
+            "source": "\/resource\/salt-docker.js",
+            "access": "user:user"
+        }
+    ],
+    "styles": [
+        {
+            "source": "\/resource\/salt-docker.css",
+            "access": "public:public"
+        }
+    ],
+    "minion_modules": [
+        {
+            "label": "Docker",
+            "icon": "\/resource\/plugins\/salt-docker\/assets\/docker_logo.png",
+            "href": "minion_docker",
+            "path": "\/minion_modules\/minion_docker",
+            "online_only": true,
+            "require_grains": {
+                "kernel": [
+                    "Linux",
+                    "SunOS"
+                ]
+            }
+        }
+    ],
+    "api": {
+        "docker": {
+            "access": {
+                "GET": "owner:owner",
+                "POST": "owner:owner"
+            }
+        }
+    },
+    "nav_menu": {
+        "Docker": {
+            "href": "\/docker",
+            "access": "user:user",
+            "menu_id": "__docker_main",
+            "icon": "\/resource\/plugins\/salt-docker\/assets\/docker_logo_white.png",
+            "showtext": true
+        }
+    }
+}
